@@ -11,6 +11,9 @@ try:
         charset='utf-8'
         )
 
+
+# (backtick```) 활용 - 객체이름을 감쌀 때 
+# (apostrophe''')활용 - 문자열 데이터(날짜, 상수 등) 입력  *except: number, boolean, null  
     sql='''
         CREATE TABLE IF NOT EXISTS `chatbot_train_data` (
         `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
