@@ -2,3 +2,17 @@ pymysql, openpyxl Module
 
 cmd + Ctrl + Shift => pip install pymysql before making create_train_data_table.py
 cmd + Ctrl + Shift => pip install openpyxl before making load_train_data.py
+
+- issue 1
+#When trying to import smth from config.py file, doesn't work
+
+>>> import openpyxl
+>>> from config.DatabaseConfig import *
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    from config.DatabaseConfig import *
+ModuleNotFoundError: No module named 'config.DatabaseConfig'; 'config' is not a package
+
+- solution
+the dir won't reckon package dir, To reckon Python Directory, needed '__init__.py' file in the folder.
+# you don't need any words in '__init__.py'
