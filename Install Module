@@ -1,0 +1,4 @@
+pymysql, openpyxl Module
+
+cmd + Ctrl + Shift => pip install pymysql before making create_train_data_table.py
+cmd + Ctrl + Shift => pip install openpyxl before making load_train_data.py
