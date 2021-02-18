@@ -48,7 +48,4 @@ select * from users;
 >>> print(rows)
 ((1, 'John@salody.com', 'j1542'),)
 
-#after testing completion, Close DB Connection
->>conection.close()
->>print("Closed")
-Closed
+
