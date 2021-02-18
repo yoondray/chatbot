@@ -1,8 +1,8 @@
 Let's install Module about "pymysql", "openpyxl" 
 
-#Install via terminal(cmd mode)
-cmd + Ctrl + Shift => pip install pymysql before making create_train_data_table.py file
-cmd + Ctrl + Shift => pip install openpyxl before making load_train_data.py file
+#Install via terminal(cmd mode)_Admin mode (cmd + Ctrl + Shift)
+1. Install pymysql - pip install pymysql before making create_train_data_table.py file
+2. Install openpyxl - pip install openpyxl before making load_train_data.py file
 
 - issue 1
 #When trying to import smth from config.py file, failed
