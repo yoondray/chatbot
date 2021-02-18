@@ -4,7 +4,7 @@ cmd + Ctrl + Shift => pip install pymysql before making create_train_data_table.
 cmd + Ctrl + Shift => pip install openpyxl before making load_train_data.py file
 
 - issue 1
-#When trying to import smth from config.py file, doesn't work
+#When trying to import smth from config.py file, failed
 
 >>> import openpyxl
 >>> from config.DatabaseConfig import *
@@ -16,3 +16,33 @@ ModuleNotFoundError: No module named 'config.DatabaseConfig'; 'config' is not a 
 - solution
 the dir won't reckon package dir, To reckon Python Directory, needed '__init__.py' file in the folder.
 # you don't need any words in '__init__.py'
+
+
+-issue 2
+#When trying to create table by pymysql, failed
+>>> import pymysql
+>>> connection = pymysql.connect(host="127.0.0.1", user="root", password="1234",
+			     db="study_db", charset="utf8")
+>>> cur = connection.cursor()
+
+#before selecting data, create table 'users' by MySQL Workbench
+CREATE TABLE `users` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `email` varchar(255) COLLATE utf8_bin NOT NULL,
+    `password` varchar(255) COLLATE utf8_bin NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
+AUTO_INCREMENT=1 ;
+
+#Check syntax validation by inserting data into 'users' by MySQL Workbench
+insert into users values(1,'John@salody.com','j1542');
+select * from users;
+
+-solution
+#Check SyntaxError by pymysql 
+>>> cur=connection.cursor()
+>>> cur.execute("select * from users")
+1
+>>> rows = cur.fetchall()
+>>> print(rows)
+((1, 'John@salody.com', 'j1542'),)
