@@ -46,3 +46,8 @@ select * from users;
 >>> rows = cur.fetchall()
 >>> print(rows)
 ((1, 'John@salody.com', 'j1542'),)
+
+#after testing completion, close DB Connection
+>>conection.close()
+>>print("Closed")
+Closed
