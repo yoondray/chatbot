@@ -14,9 +14,27 @@ Traceback (most recent call last):
     from config.DatabaseConfig import *
 ModuleNotFoundError: No module named 'config.DatabaseConfig'; 'config' is not a package
 
+>>> import pymysql
+>>> from Scripts.chatbot.config.DatabaseConfig import *
+Traceback (most recent call last):
+  File "<pyshell#24>", line 1, in <module>
+    from Scripts.chatbot.config.DatabaseConfig import *
+  File "C:\Python\Python39\Scripts\chatbot\config\DatabaseConfig.py", line 1
+    Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
+           ^
+SyntaxError: invalid syntax
+
 - solution
-the dir won't reckon package dir, To reckon Python Directory, needed '__init__.py' file in the folder.
 # you don't need any words in '__init__.py'
+the dir won't reckon package dir, To reckon Python Directory, needed '__init__.py' file in the folder.
+
+# Before beginning Module, write the code down inward import
+import pymysql
+path.append(pymysql.path.dirname(pymysql.path.abspath(pymysql.path.dirname(__file__))) )
+
+# System Setting > Environment Variable Edit "Python_Path" to Project addr
+
+
 
 
 -issue 2
