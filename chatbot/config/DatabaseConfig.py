@@ -1,6 +1,6 @@
 
 >>> DB_HOST="127.0.0.1"
->>> DB_USER="root"
+>>> DB_USER="yoondray"
 >>> DB_PASSWORD="1234"
 >>> DB_NAME="study_db"
 >>> 
