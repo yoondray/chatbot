@@ -36,6 +36,7 @@ Traceback (most recent call last):
            ^
 SyntaxError: invalid syntax
 
+
 - solution
 # you don't need any words in '__init__.py'
 the dir won't reckon package dir, To reckon Python Directory, needed '__init__.py' file in the folder.
@@ -47,79 +48,7 @@ path.append(pymysql.path.dirname(pymysql.path.abspath(pymysql.path.dirname(__fil
 # System Setting > Environment Variable Edit "Python_Path" to Project addr
 
 
--issue 2
-#When trying to create table by pymysql, failed
->>> import pymysql
->>> connection = pymysql.connect(host="127.0.0.1", user="root", password="1234",
-			     db="study_db", charset="utf8")
->>> cur = connection.cursor()
 
-#before selecting data, create table 'users' by MySQL Workbench
-CREATE TABLE `users` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `email` varchar(255) COLLATE utf8_bin NOT NULL,
-    `password` varchar(255) COLLATE utf8_bin NOT NULL,
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
-AUTO_INCREMENT=1 ;
-
-#Check syntax validation by inserting data into 'users' by MySQL Workbench
-insert into users values(1,'John@salody.com','j1542');
-select * from users;
-
--solution
-#Check SyntaxError by pymysql 
->>> cur=connection.cursor()
->>> cur.execute("select * from users")
-1
->>> rows = cur.fetchall()
->>> print(rows)
-((1, 'John@salody.com', 'j1542'),)
-
-
-- issue 3
-# 한국어 자연어처리 (KoNLpy, Kkma, Komoran, Okt 활용)
-
-from konlpy.tag import Komoran
-Traceback (most recent call last):
-  File "<pyshell#0>", line 1, in <module>
-    from konlpy.tag import Komoran
-  File "D:\Python\Python39\lib\site-packages\konlpy\__init__.py", line 12, in <module>
-    from konlpy import (
-  File "D:\Python\Python39\lib\site-packages\konlpy\tag\__init__.py", line 6, in <module>
-    from konlpy.tag._hannanum import Hannanum
-  File "D:\Python\Python39\lib\site-packages\konlpy\tag\_hannanum.py", line 7, in <module>
-    import jpype
-  File "D:\Python\Python39\lib\site-packages\jpype\__init__.py", line 18, in <module>
-    import _jpype
-ImportError: DLL load failed while importing _jpype: DLL 초기화 루틴을 실행할 수 없습니다.
-
-# Python, move to D:/  (Modify Environment Variable) 
-
-- solution 1
-1. import JPYPE
-Traceback (most recent call last):
-  File "<pyshell#1>", line 1, in <module>
-    import JPYPE
-ModuleNotFoundError: No module named 'JPype'
-** caution : What if the file was already downloded successfully, not needed to check 'Import JPype'
-
-2. getDefaultJVMPath()
-
-- solution 2
-# Upgrade pip before Uninstall JPype1
-cmd => python.exe -m pip install --upgrade pip
-	Proceed (y/n)? y
-	
-	pip install JPype1
-	Collecting JPype1
- 	 Downloading JPype1-1.2.1-cp39-cp39-win_amd64.whl (360 kB)
-    	 |████████████████████████████████| 360 kB 547 kB/s
-	Installing collected packages: JPype1
-	Successfully installed JPype1-1.2.1
-	
-	pip install konlpy
-	Requirement already satisfied
 	
 
 
