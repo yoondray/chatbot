@@ -21,6 +21,7 @@ Let's install Module about "pymysql", "openpyxl", "JAVA", "JPYPE", "konlpy"
 	- scipy (optional)
 	- tensorflow 
 	- keras
+	- Pycharm (Managing Different versions)
 
 
 - issue 1
@@ -130,6 +131,18 @@ cmd => python.exe -m pip install --upgrade pip
 	
 
 - issue 4
+# Downloading Tensorflow
+with cmd mode
+python -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.12.0-py3-none-any.whl
+
+# Failed to download Tensorflow
+now (21.Feb.22), Tensorflow doesn't match with Python 3.9.
+Needed the version to be modified to 3.8 (or 3.2)
+
+
+- solution
+# Downloading different version of Python and Proceed by Pycharm
+
 
 
 	
