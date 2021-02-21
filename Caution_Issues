@@ -2,18 +2,25 @@ Let's install Module about "pymysql", "openpyxl", "JAVA", "JPYPE", "konlpy"
 
 #Install via terminal(cmd mode)_Admin mode (cmd + Ctrl + Shift)
 1. Install pymysql - pip install pymysql before making create_train_data_table.py file
-2. Install openpyxl - pip install openpyxl before making load_train_data.py file
-
-# caution : Download JAVA
-	    Install JPype
-	    Install konlpy
-	    
+2. Install openpyxl - pip install openpyxl before making load_train_data.py file	    
 3. Install JPYPE - pip install JPype1‑1.2.0‑cp39‑cp39‑win_amd64.whl
+
 **caution : D:/Java = D:/Python (Drive Storage consistency)
 	    Upgrade pip before Uninstall JPype1
 	    pip install JPype1
+	    
+**caution : Download JAVA
+	    Install JPype
+	    Install konlpy
+	    
 4. Install konlpy - pip install konlpy
-
+5. Data-Science basic tools
+	- numpy
+	- pandas (Python Data Analysis Library)
+	- matplotlib
+	- scipy (optional)
+	- tensorflow 
+	- keras
 
 
 - issue 1
@@ -121,6 +128,8 @@ cmd => python.exe -m pip install --upgrade pip
 	pip install konlpy
 	Requirement already satisfied
 	
+
+- issue 4
 
 
 	
