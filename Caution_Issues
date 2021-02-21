@@ -6,6 +6,7 @@ Let's install Module about "pymysql", "openpyxl", "JAVA", "JPYPE", "konlpy"
 3. Install JPYPE - pip install JPype1‑1.2.0‑cp39‑cp39‑win_amd64.whl
 **caution : D:/Java = D:/Python (Drive Storage consistency)
 	    Upgrade pip before Uninstall JPype1
+	    pip install JPype1
 4. Install konlpy - pip install konlpy
 
 
