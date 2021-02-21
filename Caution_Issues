@@ -3,11 +3,17 @@ Let's install Module about "pymysql", "openpyxl", "JAVA", "JPYPE", "konlpy"
 #Install via terminal(cmd mode)_Admin mode (cmd + Ctrl + Shift)
 1. Install pymysql - pip install pymysql before making create_train_data_table.py file
 2. Install openpyxl - pip install openpyxl before making load_train_data.py file
+
+# caution : Download JAVA
+	    Install JPype
+	    Install konlpy
+	    
 3. Install JPYPE - pip install JPype1‑1.2.0‑cp39‑cp39‑win_amd64.whl
 **caution : D:/Java = D:/Python (Drive Storage consistency)
 	    Upgrade pip before Uninstall JPype1
 	    pip install JPype1
 4. Install konlpy - pip install konlpy
+
 
 
 - issue 1
@@ -90,14 +96,33 @@ ImportError: DLL load failed while importing _jpype: DLL 초기화 루틴을 실
 
 # Python, move to D:/  (Modify Environment Variable) 
 
-- solution
-import JPYPE
+- solution 1
+1. import JPYPE
 Traceback (most recent call last):
   File "<pyshell#1>", line 1, in <module>
     import JPYPE
 ModuleNotFoundError: No module named 'JPype'
+** caution : What if the file was already downloded successfully, not needed to check 'Import JPype'
 
+2. getDefaultJVMPath()
+
+- solution 2
 # Upgrade pip before Uninstall JPype1
 cmd => python.exe -m pip install --upgrade pip
 	Proceed (y/n)? y
+	
+	pip install JPype1
+	Collecting JPype1
+ 	 Downloading JPype1-1.2.1-cp39-cp39-win_amd64.whl (360 kB)
+    	 |████████████████████████████████| 360 kB 547 kB/s
+	Installing collected packages: JPype1
+	Successfully installed JPype1-1.2.1
+	
+	pip install konlpy
+	Requirement already satisfied
+	
+
+
+	
+
 
