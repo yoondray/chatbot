@@ -4,6 +4,8 @@ Let's install Module about "pymysql", "openpyxl", "JAVA", "JPYPE", "konlpy"
 1. Install pymysql - pip install pymysql before making create_train_data_table.py file
 2. Install openpyxl - pip install openpyxl before making load_train_data.py file
 3. Install JPYPE - pip install JPype1‑1.2.0‑cp39‑cp39‑win_amd64.whl
+**caution : D:/Java = D:/Python (Drive Storage consistency)
+	    Upgrade pip before Uninstall JPype1
 4. Install konlpy - pip install konlpy
 
 
@@ -66,4 +68,40 @@ select * from users;
 >>> rows = cur.fetchall()
 >>> print(rows)
 ((1, 'John@salody.com', 'j1542'),)
+
+
+- issue 3
+# 한국어 자연어처리 (KoNLpy, Kkma, Komoran, Okt 활용)
+
+from konlpy.tag import Komoran
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    from konlpy.tag import Komoran
+  File "D:\Python\Python39\lib\site-packages\konlpy\__init__.py", line 12, in <module>
+    from konlpy import (
+  File "D:\Python\Python39\lib\site-packages\konlpy\tag\__init__.py", line 6, in <module>
+    from konlpy.tag._hannanum import Hannanum
+  File "D:\Python\Python39\lib\site-packages\konlpy\tag\_hannanum.py", line 7, in <module>
+    import jpype
+  File "D:\Python\Python39\lib\site-packages\jpype\__init__.py", line 18, in <module>
+    import _jpype
+ImportError: DLL load failed while importing _jpype: DLL 초기화 루틴을 실행할 수 없습니다.
+
+# Python, move to D:/  (Modify Environment Variable) 
+
+- solution
+import JPYPE
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    import JPYPE
+ModuleNotFoundError: No module named 'JPype'
+
+# Upgrade pip before Uninstall JPype1
+cmd => python.exe -m pip install --upgrade pip
+	Proceed (y/n)? y
+# Proceed again	
+
+
+
+JPYPE.getDefaultJVMPath()
 
