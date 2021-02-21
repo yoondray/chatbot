@@ -99,9 +99,4 @@ ModuleNotFoundError: No module named 'JPype'
 # Upgrade pip before Uninstall JPype1
 cmd => python.exe -m pip install --upgrade pip
 	Proceed (y/n)? y
-# Proceed again	
-
-
-
-JPYPE.getDefaultJVMPath()
 
