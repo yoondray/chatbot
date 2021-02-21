@@ -15,69 +15,7 @@ Let's install Module about "pymysql", "openpyxl", "JAVA", "JPYPE", "konlpy"
 4. Install konlpy - pip install konlpy
 
 
-
-- issue 1
-#When trying to import smth from config.py file, failed
-
->>> import openpyxl
->>> from config.DatabaseConfig import *
-Traceback (most recent call last):
-  File "<pyshell#2>", line 1, in <module>
-    from config.DatabaseConfig import *
-ModuleNotFoundError: No module named 'config.DatabaseConfig'; 'config' is not a package
-
->>> import pymysql
->>> from Scripts.chatbot.config.DatabaseConfig import *
-Traceback (most recent call last):
-  File "<pyshell#24>", line 1, in <module>
-    from Scripts.chatbot.config.DatabaseConfig import *
-  File "C:\Python\Python39\Scripts\chatbot\config\DatabaseConfig.py", line 1
-    Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
-           ^
-SyntaxError: invalid syntax
-
-- solution
-# you don't need any words in '__init__.py'
-the dir won't reckon package dir, To reckon Python Directory, needed '__init__.py' file in the folder.
-
-# Before beginning Module, write the code down inward import
-import pymysql
-path.append(pymysql.path.dirname(pymysql.path.abspath(pymysql.path.dirname(__file__))) )
-
-# System Setting > Environment Variable Edit "Python_Path" to Project addr
-
-
--issue 2
-#When trying to create table by pymysql, failed
->>> import pymysql
->>> connection = pymysql.connect(host="127.0.0.1", user="root", password="1234",
-			     db="study_db", charset="utf8")
->>> cur = connection.cursor()
-
-#before selecting data, create table 'users' by MySQL Workbench
-CREATE TABLE `users` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `email` varchar(255) COLLATE utf8_bin NOT NULL,
-    `password` varchar(255) COLLATE utf8_bin NOT NULL,
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
-AUTO_INCREMENT=1 ;
-
-#Check syntax validation by inserting data into 'users' by MySQL Workbench
-insert into users values(1,'John@salody.com','j1542');
-select * from users;
-
--solution
-#Check SyntaxError by pymysql 
->>> cur=connection.cursor()
->>> cur.execute("select * from users")
-1
->>> rows = cur.fetchall()
->>> print(rows)
-((1, 'John@salody.com', 'j1542'),)
-
-
-- issue 3
+< issue 3 >
 # 한국어 자연어처리 (KoNLpy, Kkma, Komoran, Okt 활용)
 
 from konlpy.tag import Komoran
@@ -121,8 +59,3 @@ cmd => python.exe -m pip install --upgrade pip
 	pip install konlpy
 	Requirement already satisfied
 	
-
-
-	
-
-
