@@ -13,16 +13,17 @@ Let's install Module about "pymysql", "openpyxl", "JAVA", "JPYPE", "konlpy"
 	    Install JPype
 	    Install konlpy
 	    
-4. Install konlpy - pip install konlpy
+4. Install konlpy - pip install konlpy (NLP)
 5. Data-Science basic tools
-	- numpy
+	- numpy (Python library used for working with arrays)
 	- pandas (Python Data Analysis Library)
 	- matplotlib
 	- scipy (optional)
 	- tensorflow 
 	- keras
 	- Pycharm (Managing Different versions)
-	- scikitlearn
+	- scikitlearn (predictive data analysis) 
+	- seqeval (Calculating score)
 
 
 - issue 1
